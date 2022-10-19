@@ -7,8 +7,10 @@ from os.path import join, dirname, isdir
 from .utils.functions import parser
 from .utils.Class import Style, Color
 
+import time
+
 ROOT_DIR = dirname(__file__)
-REPO_DIR = join(ROOT_DIR, "repo")
+REPO_DIR = join(ROOT_DIR, f"repo.{time.time()}")
 
 def main():
 	args = parser()
@@ -29,7 +31,7 @@ def main():
 
 
 		# remove repo directory
-		shutil.rmtree(REPO_DIR)
+		# shutil.rmtree(REPO_DIR)
 
 		print()
 		print(Color.success("++++++++++++++++++++++++"))
